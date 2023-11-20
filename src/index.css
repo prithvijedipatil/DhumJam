@@ -142,6 +142,10 @@ code {
   opacity: 0.7 !important;
   background-color: grey !important;
 }
+.saveButtonlogin:hover {
+  border: 1px solid #f0c3f1 !important;
+  transition: all 0.5s ease-in;
+}
 
 .signinContainer {
   max-width: 600px;
