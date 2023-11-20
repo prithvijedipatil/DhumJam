@@ -6,6 +6,7 @@ import { setData } from "./Redux/dataslice";
 import Input from "./Input";
 import { Button } from "@mui/material";
 import Map from "./Map";
+import Collapse from "@mui/material/Collapse";
 
 const Adminpage = () => {
   const navigate = useNavigate();
@@ -181,9 +182,11 @@ const Adminpage = () => {
               />
             </div>
           </div>
-          <div className="graphDiv">
-            <Map className="graph" formData={formData} />
-          </div>
+          <Collapse in={chargeCustomers}>
+            <div className="graphDiv">
+              <Map className="graph" formData={formData} />
+            </div>
+          </Collapse>
 
           <Button
             className="saveButton"
