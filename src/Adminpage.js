@@ -100,7 +100,7 @@ const Adminpage = () => {
     <>
       <div className="container">
         <h1>
-          {data.name}, {data.location} on Dhum Jam
+          {data.name}, {data.location} on Dhun Jam
         </h1>
         <div>
           <div className="radiodiv">
