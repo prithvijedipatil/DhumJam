@@ -8,7 +8,7 @@ const Input = ({ value, minvalue, name, onChange, disabled }) => {
   const handlechange = (e) => {
     e.preventDefault();
 
-    if (e.target.value < minvalue) {
+    if (e.target.value <= minvalue) {
       setIsError(true);
       onChange(true, "error");
     } else {

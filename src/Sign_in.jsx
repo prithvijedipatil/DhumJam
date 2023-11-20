@@ -14,9 +14,8 @@ const Sign_in = () => {
 
   const dispatch = useDispatch();
   const [Visible, setVisible] = useState(false);
-  const [Username, setUsername] = useState("DJ@4");
-  const [Password, setPassword] = useState("Dhunjam@2023");
-  const [Response, setResponse] = useState("");
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
 
   if (id) {
     navigate(`/${id}`);
@@ -41,6 +40,7 @@ const Sign_in = () => {
       })
       .catch((error) => {
         console.log(error);
+        alert("please Check your email and password");
       });
   };
   return (
