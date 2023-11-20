@@ -1,0 +1,274 @@
+:root {
+  --theme: #030303;
+  --font-color: #ffffff;
+  --graph-color: #f0c3f1;
+  --button-bg: #6741d9;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--theme);
+  color: var(--font-color);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.radiodiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 15px 10px;
+}
+
+.radiodiv label {
+  max-width: 50%;
+}
+
+.radioButtons {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.customTextField {
+  border: 0.2px solid white !important;
+  border-radius: 8px;
+  height: 32px;
+  width: 100%;
+}
+
+.customTextField input {
+  color: white !important;
+  font-size: 16px;
+  text-align: center;
+  margin: auto;
+  padding: 4px 2px !important;
+}
+
+.customTextField input:disabled {
+  color: grey !important;
+  -webkit-text-fill-color: grey;
+}
+
+.customamountdiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 15px 10px;
+}
+
+.customAmountDivInput {
+  width: 50%;
+}
+
+.regularsongamountdiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 25px 10px;
+}
+
+.regularCategories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  gap: 10px;
+}
+
+.regularCategories input {
+  color: white;
+}
+
+.highcharts-root {
+  margin: 40px 0px !important;
+}
+
+.highcharts-axis-labels {
+  color: white !important;
+}
+
+.saveButton {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px !important;
+  margin: 30px 0px !important;
+  font-size: 16px !important;
+  font-family: "Open Sans", "sans-serif" !important;
+  background-color: #6741d9 !important;
+  text-transform: none !important;
+  font-weight: 800 !important;
+}
+
+.saveButton:hover {
+  border: 1px solid #f0c3f1 !important;
+  transition: all 0.5s ease-in;
+}
+.saveButton:active {
+  border: 1px solid #f0c3f1 !important;
+  transition: all 0.5s ease-in;
+}
+.saveButton:disabled {
+  opacity: 0.7 !important;
+  background-color: grey !important;
+}
+
+.signinContainer {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form {
+  width: 500px;
+  text-align: center;
+}
+
+.username {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  color: white;
+  border: 0.2px solid white !important;
+  border-radius: 14px;
+  height: 48px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.pwd {
+  position: relative;
+}
+
+.password {
+  margin: 24px 0px;
+  width: 100%;
+  background: transparent;
+  outline: none;
+  color: white;
+  border: 0.2px solid white !important;
+  border-radius: 14px;
+  height: 48px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.eyeToggle {
+  position: absolute;
+  right: 22px;
+  top: 40px;
+}
+
+.saveButtonlogin {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px !important;
+  margin: 15px 0px !important;
+  font-size: 16px !important;
+  font-family: "Open Sans", "sans-serif" !important;
+  background-color: #6741d9 !important;
+  text-transform: none !important;
+  font-weight: 800 !important;
+}
+
+.saveButtonlogin:disabled {
+  background-color: grey !important;
+  opacity: 0.7 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+  }
+  .signinContainer {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 20px 16px;
+  }
+  .signinContainer {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 20px 16px;
+  }
+  .radiodiv {
+    display: block;
+  }
+
+  .radioButtons {
+    margin-top: 16px;
+  }
+  .customamountdiv {
+    display: block;
+  }
+  .regularsongamountdiv {
+    display: block;
+  }
+  .regularCategories {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .customAmountDivInput {
+    margin-top: 16px;
+  }
+  .customAmountDivInput {
+    display: block;
+  }
+
+  .graphDiv {
+    padding-bottom: 16px;
+  }
+}
