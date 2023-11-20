@@ -219,13 +219,13 @@ code {
 
 @media only screen and (max-width: 768px) {
   .container {
-    max-width: 600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
   }
   .signinContainer {
-    max-width: 600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
@@ -251,6 +251,32 @@ code {
     display: block;
   }
 
+  .password {
+    margin: 24px 0px;
+
+    background: transparent;
+    outline: none;
+    color: white;
+    border: 0.2px solid white !important;
+    border-radius: 14px;
+    height: 48px;
+    width: 60%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .username {
+    background: transparent;
+    outline: none;
+    color: white;
+    border: 0.2px solid white !important;
+    border-radius: 14px;
+    height: 48px;
+    width: 60%;
+    text-align: center;
+    font-size: 16px;
+  }
+
   .radioButtons {
     margin-top: 16px;
   }
@@ -274,5 +300,9 @@ code {
 
   .graphDiv {
     padding-bottom: 16px;
+  }
+
+  .saveButtonlogin {
+    width: 60%;
   }
 }
