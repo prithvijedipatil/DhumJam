@@ -16,6 +16,7 @@ const Adminpage = () => {
   const adminid = useSelector((state) => state.User.user.id);
   const data = useSelector((state) => state.User.data);
   const [chargeCustomers, setChargeCustomers] = useState(data.charge_customers);
+  const [button, setButton] = useState(false);
 
   const [formData, setFormData] = useState(data.amount);
   const [isError, setIsError] = useState(false);
@@ -32,12 +33,20 @@ const Adminpage = () => {
       .catch((error) => {
         console.log(error);
         navigate("/");
+      })
+      .finally(() => {
+        // checkDisabled();
       });
   };
 
   useEffect(() => {
     getAdminData();
   }, []);
+
+  useEffect(() => {
+    checkDisabled();
+  }, [formData, chargeCustomers, isError]);
+
   console.log(data, "reduxdata");
   if (!id && !adminid) {
     navigate("/");
@@ -48,11 +57,12 @@ const Adminpage = () => {
       setIsError(true);
     } else {
       setFormData({ ...formData, [name]: value });
-      checkDisabled();
     }
+    checkDisabled();
   };
 
   const checkDisabled = () => {
+    console.log("checkingg");
     if (
       formData.category_6 > 99 &&
       formData.category_7 > 79 &&
@@ -61,9 +71,14 @@ const Adminpage = () => {
       formData.category_10 > 19 &&
       chargeCustomers
     ) {
-      return false;
+      console.log("button NOT active");
+      setButton(false);
+      // return false;
+    } else {
+      setButton(true);
+      console.log("button active");
     }
-    return true;
+    // return true;
   };
 
   if (!data.id) {
@@ -76,6 +91,7 @@ const Adminpage = () => {
 
   const handleRadio = () => {
     setChargeCustomers(!chargeCustomers);
+    // checkDisabled();
   };
 
   const postdata = () => {
@@ -134,7 +150,7 @@ const Adminpage = () => {
             <div className="customAmountDivInput">
               <Input
                 disabled={!chargeCustomers}
-                value={data.amount.category_6}
+                value={formData.category_6}
                 minvalue={99}
                 name="category_6"
                 onChange={handleFormChange}
@@ -151,7 +167,7 @@ const Adminpage = () => {
             <div className="regularCategories">
               <Input
                 disabled={!chargeCustomers}
-                value={data.amount.category_7}
+                value={formData.category_7}
                 minvalue={79}
                 name="category_7"
                 onChange={handleFormChange}
@@ -159,7 +175,7 @@ const Adminpage = () => {
 
               <Input
                 disabled={!chargeCustomers}
-                value={data.amount.category_8}
+                value={formData.category_8}
                 minvalue={59}
                 name="category_8"
                 onChange={handleFormChange}
@@ -167,7 +183,7 @@ const Adminpage = () => {
 
               <Input
                 disabled={!chargeCustomers}
-                value={data.amount.category_9}
+                value={formData.category_9}
                 minvalue={39}
                 name="category_9"
                 onChange={handleFormChange}
@@ -175,7 +191,7 @@ const Adminpage = () => {
 
               <Input
                 disabled={!chargeCustomers}
-                value={data.amount.category_10}
+                value={formData.category_10}
                 minvalue={19}
                 name="category_10"
                 onChange={handleFormChange}
@@ -187,12 +203,12 @@ const Adminpage = () => {
               <Map className="graph" formData={formData} />
             </div>
           </Collapse>
-
+          {console.log("button state", button)}
           <Button
             className="saveButton"
             variant="contained"
             onClick={() => postdata()}
-            disabled={checkDisabled()}
+            disabled={button}
           >
             Save
           </Button>

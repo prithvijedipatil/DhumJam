@@ -12,9 +12,9 @@ const Input = ({ value, minvalue, name, onChange, disabled }) => {
       setIsError(true);
       onChange(true, "error");
     } else {
-      onChange(parseInt(e.target.value), name);
       setIsError(false);
     }
+    onChange(parseInt(e.target.value), name);
   };
 
   return (
@@ -26,7 +26,7 @@ const Input = ({ value, minvalue, name, onChange, disabled }) => {
         error={isError}
         name={name}
         type="number"
-        defaultValue={value}
+        value={value}
         onChange={(e) => handlechange(e)}
         helperText={isError ? `> ${minvalue}` : ""}
         sx={{ border: "none", "& fieldset": { border: "none" } }}
