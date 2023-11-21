@@ -47,7 +47,6 @@ const Adminpage = () => {
     checkDisabled();
   }, [formData, chargeCustomers, isError]);
 
-  console.log(data, "reduxdata");
   if (!id && !adminid) {
     navigate("/");
   }
@@ -62,7 +61,6 @@ const Adminpage = () => {
   };
 
   const checkDisabled = () => {
-    console.log("checkingg");
     if (
       formData.category_6 > 99 &&
       formData.category_7 > 79 &&
@@ -71,12 +69,10 @@ const Adminpage = () => {
       formData.category_10 > 19 &&
       chargeCustomers
     ) {
-      console.log("button NOT active");
       setButton(false);
       // return false;
     } else {
       setButton(true);
-      console.log("button active");
     }
     // return true;
   };
@@ -203,7 +199,7 @@ const Adminpage = () => {
               <Map className="graph" formData={formData} />
             </div>
           </Collapse>
-          {console.log("button state", button)}
+
           <Button
             className="saveButton"
             variant="contained"
